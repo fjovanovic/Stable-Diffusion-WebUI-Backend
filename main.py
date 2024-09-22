@@ -2,6 +2,13 @@ from typing import Dict
 
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
+from fastapi.exceptions import RequestValidationError, HTTPException
+
+from handlers import (
+    not_found_exception_handler,
+    validation_exception_handler,
+    global_exception_handler
+)
 
 
 app = FastAPI(
@@ -12,6 +19,11 @@ app = FastAPI(
         'useUnsafeMarkdown': True
     }
 )
+
+
+app.add_exception_handler(Exception, global_exception_handler)
+app.add_exception_handler(HTTPException, not_found_exception_handler)
+app.add_exception_handler(RequestValidationError, validation_exception_handler)
 
 
 @app.get(
