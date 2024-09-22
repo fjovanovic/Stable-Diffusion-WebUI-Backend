@@ -14,3 +14,12 @@ async def not_found_exception_handler(
         content = {'error': 'Bad request, check url'}
     
     return JSONResponse(content=content, status_code=404)
+
+
+async def validation_exception_handler(
+    request: Request, 
+    exc: RequestValidationError
+) -> JSONResponse:
+    content = {'error': str(exc).replace('\n', '. ')}
+
+    return JSONResponse(content=content, status_code=422)
