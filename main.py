@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError, HTTPException
 
+from routers import txt2img
 from handlers import (
     not_found_exception_handler,
     validation_exception_handler,
@@ -36,3 +37,6 @@ async def ping() -> Dict[str, str]:
     content = {'message': 'pong!'}
 
     return JSONResponse(content=content)
+
+
+app.include_router(txt2img.router)
