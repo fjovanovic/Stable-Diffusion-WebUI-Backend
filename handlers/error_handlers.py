@@ -20,14 +20,14 @@ async def validation_exception_handler(
     request: Request, 
     exc: RequestValidationError
 ) -> JSONResponse:
-    content = {'error': str(exc).replace('\n', '. ')}
+    content = {'error': 'Missing / invalid data'}
 
     return JSONResponse(content=content, status_code=422)
 
 
 async def global_exception_handler(
     request: Request, 
-    exc: RequestValidationError
+    exc: Exception
 ) -> JSONResponse:
     content = {'error': 'Unexpected error'}
     
