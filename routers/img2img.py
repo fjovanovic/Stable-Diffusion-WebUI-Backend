@@ -25,7 +25,7 @@ img2img_pipe = None
 @router.post('/img2img/generate_image')
 async def img2img_generate_image(
     model: str = Form(
-        default='stabilityai/sdxl-turbo',
+        default='stabilityai/stable-diffusion-xl-base-1.0',
         description='Name of the pretrained model'
     ),
     prompt: str = Form(
