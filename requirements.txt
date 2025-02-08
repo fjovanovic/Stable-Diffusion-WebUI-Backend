@@ -1,2 +1,4 @@
 fastapi
 pillow
+diffusers
+transformers
