@@ -21,6 +21,7 @@ router = APIRouter(
 
 
 txt2img_active_model = ''
+txt2img_pipe = None
 txt2img_active_scheduler = ''
 txt2img_available_schedulers = {
     'DDIM': DDIMScheduler,
