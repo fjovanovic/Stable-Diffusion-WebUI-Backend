@@ -1,4 +1,4 @@
-# Stable Diffusion WebUI Backed
+# Stable Diffusion WebUI Backend
 This project is a backend written using [FastAPI](https://fastapi.tiangolo.com/) specifically made for [AI Image Generator](https://github.com/fjovanovic/AI-Image-Generator-WebUI) 
 project, web-based AI image generator powered by [Stable Diffusion](https://github.com/Stability-AI/stablediffusion) and [Gradio](https://www.gradio.app/). 
 
